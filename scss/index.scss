@@ -1,0 +1,28 @@
+@import 'mixins';
+
+@function sum($numbers...) {
+    $sum: 0;
+    @each $number in $numbers {
+      $sum: $sum + $number;
+    }
+    @return $sum;
+}
+
+body {
+    display: flex;
+    flex-shrink: 0;
+    background-color: $bg-color;
+    font-family: $default-font;
+    @include normalize;
+
+    div {
+        user-select: none;
+        color: #fff;
+        width: sum(1rem,1.25rem);
+
+        .social-link {
+            background-color: grey;
+            @include icons-list($icons);
+        }
+    }
+}

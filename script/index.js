@@ -1,0 +1,1 @@
+for(var isimler=["Yusuf","Ramazan","Sinan","Mehmet"],sira=0;sira<isimler.length;sira++)isimler[sira]=isimler[sira]+" SEZER";

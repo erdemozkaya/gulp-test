@@ -1,0 +1,21 @@
+@import 'variables';
+
+@mixin normalize {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@mixin icons-list($map) {
+    @each $icon-name, $icon in $map {
+      @if not map-has-key($map, $icon-name) {
+        @warn "'#{$icon-name}' is not a valid icon name";
+      }
+  
+      @else {
+        &--#{$icon-name}::before {
+          content: $icon;
+        }
+      } 
+    }
+}
